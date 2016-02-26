@@ -31,6 +31,13 @@ module.exports = function(config) {
       'bower_components/angular-route/angular-route.js',
       'bower_components/angular-sanitize/angular-sanitize.js',
       'bower_components/angular-touch/angular-touch.js',
+      'bower_components/Chart.js/Chart.js',
+      'bower_components/angular-chart.js/dist/angular-chart.js',
+      'bower_components/Chart.Scatter.js/Chart.Scatter.js',
+      'bower_components/long/dist/long.js',
+      'bower_components/bytebuffer/dist/ByteBufferAB.js',
+      'bower_components/protobuf/dist/protobuf.js',
+      'bower_components/paho-mqtt-js/mqttws31.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",
