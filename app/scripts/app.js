@@ -10,6 +10,7 @@
  */
 angular
   .module('kuraPeopleCounterWebuiApp', [
+    'kuraPeopleCounterWebuiApp.services',
     'ngAnimate',
     'ngCookies',
     'ngResource',

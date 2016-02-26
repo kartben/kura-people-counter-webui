@@ -36,7 +36,6 @@ module.exports = function(config) {
       'bower_components/long/dist/long.js',
       'bower_components/bytebuffer/dist/ByteBufferAB.js',
       'bower_components/protobuf/dist/protobuf.js',
-      'bower_components/paho-mqtt-js/mqttws31.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",

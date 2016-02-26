@@ -86,14 +86,18 @@
     <script src="bower_components/long/dist/long.js"></script>
     <script src="bower_components/bytebuffer/dist/ByteBufferAB.js"></script>
     <script src="bower_components/protobuf/dist/protobuf.js"></script>
-    <script src="bower_components/paho-mqtt-js/mqttws31.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
+        <script src="scripts/services.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
         <!-- endbuild -->
+        
+        <script src="https://cdn.rawgit.com/eclipse/paho.mqtt.javascript/master/src/mqttws31.js"></script>
+
+
 </body>
 </html>

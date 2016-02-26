@@ -13,8 +13,7 @@
     "moment": "^2.11.2",
     "angular-chart.js": "https://github.com/jtblin/angular-chart.js.git#chartjs-2.0",
     "Chart.js": "https://github.com/nnnick/Chart.js.git#v2.0-dev",
-    "protobuf": "^5.0.1",
-    "paho-mqtt-js": "^1.0.1"
+    "protobuf": "^5.0.1"
   },
   "devDependencies": {
     "angular-mocks": "^1.4.0"
