@@ -11,8 +11,8 @@
     "angular-sanitize": "^1.4.0",
     "angular-touch": "^1.4.0",
     "moment": "^2.11.2",
-    "angular-chart.js": "https://github.com/jtblin/angular-chart.js.git#chartjs-2.0",
     "Chart.js": "https://github.com/nnnick/Chart.js.git#v2.0-dev",
+    "angular-chart.js": "https://github.com/jtblin/angular-chart.js.git#chartjs-2.0",
     "protobuf": "^5.0.1"
   },
   "devDependencies": {
