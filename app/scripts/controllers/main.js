@@ -8,47 +8,77 @@
  * Controller of the kuraPeopleCounterWebuiApp
  */
 angular.module('kuraPeopleCounterWebuiApp')
-    .controller('MainCtrl', ['$scope',
-        function($scope) {
-            $scope.awesomeThings = [
-                'HTML5 Boilerplate',
-                'AngularJS',
-                'Karma'
+    .controller('MainCtrl', ['$scope', '$interval',
+        function($scope, $interval) {
+            $scope.labels = [moment().toDate()];
+            $scope.series = ['Absolute In', 'Absolute Out'];
+
+            function randomScalingFactor() {
+                return Math.round(Math.random() * 1000 * (Math.random() > 0.5 ? 1 : 1));
+            }
+
+            function newDate(days) {
+                return moment().add(days, 'd').toDate();
+            }
+
+            function newDateString(days) {
+                return moment().add(days, 'd').format();
+            }
+
+
+            $scope.data = [
+                [], []
             ];
 
-		    $scope.type = 'Scatter';
-            $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
-            $scope.series = ['Series A', 'Series B'];
-            $scope.data = [
-    {
-      label: 'My First dataset',
-      strokeColor: '#F16220',
-      pointColor: '#F16220',
-      pointStrokeColor: '#fff',
-      data: [
-        { x: 19, y: 65 }, 
-        { x: 27, y: 59 }, 
-        { x: 28, y: 69 }, 
-        { x: 40, y: 81 },
-        { x: 48, y: 56 }
-      ]
-    },
-    {
-      label: 'My Second dataset',
-      strokeColor: '#007ACC',
-      pointColor: '#007ACC',
-      pointStrokeColor: '#fff',
-      data: [
-        { x: 19, y: 75, r: 4 }, 
-        { x: 27, y: 69, r: 7 }, 
-        { x: 28, y: 70, r: 5 }, 
-        { x: 40, y: 31, r: 3 },
-        { x: 48, y: 76, r: 6 },
-        { x: 52, y: 23, r: 3 }, 
-        { x: 24, y: 32, r: 4 }
-      ]
-    }
-  ]
+            function getLiveChartData() {
+                if ($scope.data[0].length == 50) {
+                    $scope.labels = $scope.labels.slice(1);
+                    $scope.data[0] = $scope.data[0].slice(1);
+                } else {
+                    $scope.labels.push(moment().toDate());
+                    $scope.data[0].push(randomScalingFactor());
+                }
+            }
+
+            $interval(function() {
+                getLiveChartData();
+            }, 1000);
+
+
+
+            $scope.options = {
+                elements: {
+                    line: {
+                        fill: false
+                    }
+                },
+
+
+      animation: false,
+      showScale: false,
+      showTooltips: false,
+      pointDot: false,
+      datasetStrokeWidth: 0.5,
+
+                scales: {
+                    xAxes: [{
+                        type: "time",
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Date'
+                        }
+                    }, ],
+                    yAxes: [{
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'value'
+                        }
+                    }]
+                }
+            }
+
             $scope.onClick = function(points, evt) {
                 console.log(points, evt);
             };
